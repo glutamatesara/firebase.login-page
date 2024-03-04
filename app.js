@@ -25,38 +25,36 @@ const auth = getAuth(app);
 const email = document.getElementById("emailInput");
 const password = document.getElementById("passInput");
 const signInBtn = document.getElementById("signIn");
-const signUpBtn = document.getElementById("signUp");
+// const signUpBtn = document.getElementById("signUp");
 
-signUpBtn.addEventListener("click",() => {
-  
+// signUpBtn.addEventListener("click", ()=>{
     
-    createUserWithEmailAndPassword(auth, email.value, password.value)
-  .then((userCredential) => {
-    // Signed up 
-    const user = userCredential.user;
-    alert("Success register")
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // ..
-  });
-
-})
+//   createUserWithEmailAndPassword(auth, email.value, password.value)
+//   .then((userCredential) => {
+//     // Signed up 
+//     const user = userCredential.user;
+//     alert("Success register")
+//     // ...
+//   })
+//   .catch((error) => {
+//     const errorCode = error.code;
+//     const errorMessage = error.message;
+//     // ..
+//   });
+// })
 
 signInBtn.addEventListener("click", ()=>{
-    console.log("login")
-    signInWithEmailAndPassword(auth, email.value, password.value)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    alert("Success Login")
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorCode,errorMessage)
-  });
+  console.log("login")
+  signInWithEmailAndPassword(auth, email.value, password.value)
+.then((userCredential) => {
+  // Signed in 
+  const user = userCredential.user;
+  alert("Success Login")
+  // ...
+})
+.catch((error) => {
+  const errorCode = error.code;
+  const errorMessage = error.message;
+  alert(errorCode,errorMessage)
+});
 })
